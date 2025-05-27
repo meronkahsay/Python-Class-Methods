@@ -7,7 +7,6 @@ class Account:
         self.balance = 0
         self.transaction = []
         self.is_secure = True
-        self.is_freeze = True
         self.mini_balance = 58
     def getbalance(self):
         sum_withdraw = sum(self.withdraw_list)
@@ -90,7 +89,7 @@ class Account:
         self.transaction.append(f"Interest added: {interest}")
         return f"Interest of {interest} added. New balance is {self.balance}"
     def freeze(self):
-        if not self.is_secure and not self.is_freeze:
+        if not self.is_secure:
             self.is_freeze = True
             return "Your account has been frozen for security"
         else:
